@@ -3,17 +3,30 @@ from src.Actions import *
 from src.Student import Student
 
 def main():
-    ali = Proffesor("Ali", "Alizadeh", 123456)
-    prof_lectures = ali.give_lecture()
+    farzad = Proffesor("Farzad", "Alizadeh", 123456)
+    prof_lectures = []
 
-    sam = Student("Sam", "Amini", 3, 456789)
-    std_lectures = sam.pick_lecture(prof_lectures)
-    std_dictionary_of_lectures = create_std_dictionary(std_lectures, f"{sam.name} {sam.family}")
+    while len(prof_lectures) < 3:
+        prof_lectures = farzad.give_lecture()
+
+    alireza = Student("Alireza", "Pakravan", 3, 456789)
+    std_lectures = alireza.pick_lecture(prof_lectures)
+
+    while std_lectures == []:
+        std_lectures = alireza.pick_lecture(prof_lectures)
+
+    
+    std_dictionary_of_lectures = create_std_dictionary(std_lectures, f"{alireza.name} {alireza.family}")
     create_std_dictionary_file(std_dictionary_of_lectures)
 
-    ali.give_grade(f"{sam.name} {sam.family}")
-    average = sam.avg()
-    print(f"Average of {sam.name} {sam.family} in this semister is: {average}")
-    sam.status(average)
+    result = farzad.give_grade(f"{alireza.name} {alireza.family}")
+
+    while result != "Done":
+        result = farzad.give_grade(f"{alireza.name} {alireza.family}")
+        
+
+    average = alireza.avg()
+    print(f"Average of {alireza.name} {alireza.family} in this semister is: {average}")
+    alireza.status(average)
 
 main()
