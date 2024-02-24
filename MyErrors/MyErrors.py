@@ -4,7 +4,6 @@ class MyErrors(Exception):
         super().__init__(self.message)
 
 
-
     def lecture_not_defined(self):
         self.message = "This class is not defined by proffesor!"
         return self.message
@@ -18,7 +17,3 @@ class MyErrors(Exception):
     def invalid_point(self):
         self.message = "Your score should be something between 0 to 20!"
         return self.message
-
-
-    def __repr__(self):
-        return f"{self.lecture} is not valid!"

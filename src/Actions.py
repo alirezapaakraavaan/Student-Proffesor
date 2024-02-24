@@ -25,5 +25,5 @@ def create_std_dictionary_file(std_dictionary_of_lectures):
             f.write(json_data)
 
     else:
-        with open('Student_Grades.txt', 'w') as f:
+        with open('Student_Grades.json', 'w') as f:
             f.write(json_data)

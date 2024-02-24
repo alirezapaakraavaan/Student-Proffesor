@@ -36,7 +36,7 @@ class Student(Person):
             elif duplicated != 0:
                 print(me.duplicated_lecture())
             
-            lectures = []
+            lectures = None
 
         return lectures
 
@@ -52,7 +52,7 @@ class Student(Person):
                 if isinstance(value, (int, float)):
                     total_sum += value
                     
-        average = total_sum / 3
+        average = total_sum / self.grade
 
         return average
 

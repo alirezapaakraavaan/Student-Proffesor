@@ -12,13 +12,12 @@ def main():
     alireza = Student("Alireza", "Pakravan", 3, 456789)
     std_lectures = alireza.pick_lecture(prof_lectures)
 
-    while std_lectures == []:
+    while std_lectures == None:
         std_lectures = alireza.pick_lecture(prof_lectures)
 
     
     std_dictionary_of_lectures = create_std_dictionary(std_lectures, f"{alireza.name} {alireza.family}")
     create_std_dictionary_file(std_dictionary_of_lectures)
-
     result = farzad.give_grade(f"{alireza.name} {alireza.family}")
 
     while result != "Done":
