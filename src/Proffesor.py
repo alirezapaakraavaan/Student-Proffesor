@@ -38,7 +38,7 @@ class Proffesor(Person):
 
         try:
             for lecture in existing_data[student]:
-                inp = input(f"Enter new value for {lecture}: ")
+                inp = input(f"Enter new point for {student}'s {lecture}: ")
 
                 if (float(inp) < 0) or (float(inp) > 20):
                     raise MyErrors()
